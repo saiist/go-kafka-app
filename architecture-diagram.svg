@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- 背景 -->
+  <rect width="800" height="500" fill="#f8f9fa" />
+  
+  <!-- Docker Compose環境 -->
+  <rect x="50" y="50" width="700" height="400" rx="10" ry="10" fill="#e9ecef" stroke="#adb5bd" stroke-width="2" />
+  <text x="70" y="80" font-family="Arial" font-size="16" font-weight="bold">Docker Compose Environment</text>
+
+  <!-- ZooKeeper -->
+  <rect x="100" y="120" width="150" height="80" rx="5" ry="5" fill="#f8f8f8" stroke="#6c757d" stroke-width="2" />
+  <text x="175" y="165" font-family="Arial" font-size="14" text-anchor="middle">ZooKeeper</text>
+  <text x="175" y="185" font-family="Arial" font-size="12" text-anchor="middle">Port: 2181</text>
+
+  <!-- Kafka Broker -->
+  <rect x="350" y="120" width="150" height="80" rx="5" ry="5" fill="#f8f8f8" stroke="#6c757d" stroke-width="2" />
+  <text x="425" y="155" font-family="Arial" font-size="14" text-anchor="middle">Kafka Broker</text>
+  <text x="425" y="175" font-family="Arial" font-size="12" text-anchor="middle">Internal: 29092</text>
+  <text x="425" y="190" font-family="Arial" font-size="12" text-anchor="middle">External: 9092</text>
+
+  <!-- Kafka UI -->
+  <rect x="600" y="120" width="120" height="80" rx="5" ry="5" fill="#f8f8f8" stroke="#6c757d" stroke-width="2" />
+  <text x="660" y="165" font-family="Arial" font-size="14" text-anchor="middle">Kafka UI</text>
+  <text x="660" y="185" font-family="Arial" font-size="12" text-anchor="middle">Port: 8080</text>
+
+  <!-- Kafka Setup -->
+  <rect x="350" y="240" width="150" height="60" rx="5" ry="5" fill="#e2e3e5" stroke="#6c757d" stroke-width="2" />
+  <text x="425" y="275" font-family="Arial" font-size="14" text-anchor="middle">Kafka Setup</text>
+  <text x="425" y="290" font-family="Arial" font-size="12" text-anchor="middle">Topic: sample-topic</text>
+
+  <!-- Producer -->
+  <rect x="100" y="340" width="150" height="80" rx="5" ry="5" fill="#d1e7dd" stroke="#198754" stroke-width="2" />
+  <text x="175" y="375" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Producer</text>
+  <text x="175" y="395" font-family="Arial" font-size="12" text-anchor="middle">Go Application</text>
+  <text x="175" y="410" font-family="Arial" font-size="12" text-anchor="middle">mode: producer</text>
+
+  <!-- Consumer -->
+  <rect x="600" y="340" width="150" height="80" rx="5" ry="5" fill="#cfe2ff" stroke="#0d6efd" stroke-width="2" />
+  <text x="675" y="375" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Consumer</text>
+  <text x="675" y="395" font-family="Arial" font-size="12" text-anchor="middle">Go Application</text>
+  <text x="675" y="410" font-family="Arial" font-size="12" text-anchor="middle">mode: consumer</text>
+
+  <!-- 接続線 -->
+  <!-- ZooKeeper to Kafka -->
+  <line x1="250" y1="160" x2="350" y2="160" stroke="#6c757d" stroke-width="2" />
+  <polygon points="345,155 350,160 345,165" fill="#6c757d" />
+
+  <!-- Kafka to UI -->
+  <line x1="500" y1="160" x2="600" y2="160" stroke="#6c757d" stroke-width="2" />
+  <polygon points="595,155 600,160 595,165" fill="#6c757d" />
+
+  <!-- Kafka to Setup -->
+  <line x1="425" y1="200" x2="425" y2="240" stroke="#6c757d" stroke-width="2" />
+  <polygon points="420,235 425,240 430,235" fill="#6c757d" />
+
+  <!-- Producer to Kafka -->
+  <path d="M 175 340 C 175 300 350 300 350 160" stroke="#198754" stroke-width="2" fill="none" />
+  <polygon points="345,165 350,160 355,165" fill="#198754" />
+
+  <!-- Kafka to Consumer -->
+  <path d="M 500 160 C 500 300 675 300 675 340" stroke="#0d6efd" stroke-width="2" fill="none" />
+  <polygon points="670,335 675,340 680,335" fill="#0d6efd" />
+
+  <!-- Message Flow -->
+  <text x="270" y="270" font-family="Arial" font-size="12" fill="#198754" transform="rotate(-45 270 270)">Publish Messages</text>
+  <text x="520" y="270" font-family="Arial" font-size="12" fill="#0d6efd" transform="rotate(45 520 270)">Consume Messages</text>
+
+  <!-- サンプルトピック -->
+  <rect x="350" y="320" width="150" height="40" rx="20" ry="20" fill="#fff3cd" stroke="#ffc107" stroke-width="2" />
+  <text x="425" y="345" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">sample-topic</text>
+
+  <!-- 矢印 Producer to Topic -->
+  <line x1="250" y1="365" x2="350" y2="340" stroke="#198754" stroke-width="2" stroke-dasharray="5,3" />
+  <polygon points="345,335 350,340 345,345" fill="#198754" />
+
+  <!-- 矢印 Topic to Consumer -->
+  <line x1="500" y1="340" x2="600" y2="365" stroke="#0d6efd" stroke-width="2" stroke-dasharray="5,3" />
+  <polygon points="595,360 600,365 595,370" fill="#0d6efd" />
+</svg>
